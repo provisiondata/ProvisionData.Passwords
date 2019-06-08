@@ -65,7 +65,7 @@ namespace ProvisionData.Passwords.UnitTests
             var password = generator.Generate(100, 4, 8);
 
             // Assert
-            Assert.Equal(10, password.Count());
+            Assert.Equal(PronounceablePasswordGenerator.MaxCount, password.Count());
         }
     }
 }

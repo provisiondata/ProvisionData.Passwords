@@ -43,7 +43,7 @@ namespace ProvisionData.Passwords
 
         public IEnumerable<String> Generate(Int32 count, Int32 minLength = 4, Int32 maxLength = 8)
         {
-            count = Math.Clamp(count, 1, 10);
+            count = Math.Clamp(count, 1, MaxCount);
 
             for (var index = 0; index < count; index++)
             {
