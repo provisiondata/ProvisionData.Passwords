@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Xunit;
 
 namespace ProvisionData.Passwords.UnitTests
@@ -56,13 +55,13 @@ namespace ProvisionData.Passwords.UnitTests
             const Int32 iterations = 1000;
 
             // Arrange
-            var generator = new PronounceablePasswordGenerator(new GenerateOptions(RNG) { Length = 8 }, Graph.Default);
+            var generator = new PronounceablePasswordGenerator();
 
             // Act 100000 times
             var set = new HashSet<String>();
             for (var index = 0; index < iterations; index++)
             {
-                Assert.True(set.Add(generator.Generate().First()));
+                Assert.True(set.Add(generator.Generate(8)));
             }
         }
     }
