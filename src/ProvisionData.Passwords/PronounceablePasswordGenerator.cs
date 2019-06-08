@@ -41,6 +41,8 @@ namespace ProvisionData.Passwords
 
         public Char Separator { get; set; }
 
+        public String Name => "Pronounceable";
+
         public IEnumerable<String> Generate(Int32 count, Int32 minLength = 4, Int32 maxLength = 8)
         {
             count = Math.Clamp(count, 1, MaxCount);
